@@ -1,0 +1,23 @@
+#set($inputRoot = $input.path('$'))
+{
+ "menus" : [
+#foreach($elem in $inputRoot)
+    {
+        "id": $elem.getMenu_id(),
+        "name": "$elem.getMenu_nm()",
+        "display_property": "$elem.getMenu_exps_prop_cd()",
+        "service_type": "$elem.getSvc_prop_cd()",
+        "vas": {
+            "service_id": "$elem.getVas_svc_id()",
+            "id": "$elem.getVas_id()",
+            "item_id": "$elem.getVas_itm_id()"
+        },
+        "call": {
+            "type": "$elem.getCall_typ_cd()",
+            "url": "$elem.getCall_url()",
+            "cw_id": "$elem.getDist_to_dt()"
+        }
+    }#if($foreach.hasNext),#end
+#end
+ ]
+}
