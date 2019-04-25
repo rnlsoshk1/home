@@ -1,5 +1,6 @@
 package com.velocity.test;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ public class Controller {
     }
 
     @RequestMapping(value = "/menus", method = RequestMethod.GET)
-    public String form(){
+    public JsonNode form(){
         return service.getResult();
     }
 

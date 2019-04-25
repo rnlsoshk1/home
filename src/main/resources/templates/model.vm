@@ -1,9 +1,8 @@
-#set($inputRoot = $input.path('$'))
 {
  "menus" : [
 #foreach($elem in $inputRoot)
     {
-        "id": $elem.getMenu_id(),
+        "ide": "$elem.getMenu_id()",
         "name": "$elem.getMenu_nm()",
         "display_property": "$elem.getMenu_exps_prop_cd()",
         "service_type": "$elem.getSvc_prop_cd()",
